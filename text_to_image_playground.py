@@ -3,7 +3,7 @@ import os
 import streamlit as st
 import torch
 
-def __init__():
+def initialize_app():
  
     global available_gpus
     global device
@@ -25,7 +25,7 @@ def __init__():
 def initialize_page():
 
     st.set_page_config(page_title = 'Andalem Text-To-Image Playground', 
-                       page_icon = './app_images/andalem-icon-orange.png', 
+                       page_icon = './app_images/andalem-icon.png', 
                        layout = 'wide', 
                        initial_sidebar_state = 'auto')
     
@@ -45,15 +45,6 @@ def initialize_page():
                             }
                             
                             [data-testid=stImage] {                                
-                                text-align: center;
-                                display: block;
-                                margin-left: auto;
-                                margin-right: auto;
-                                width: 100%;
-                            }
-
-                            [data-testid=stImageCaption] {
-                                color: #FFFFFF;
                                 text-align: center;
                                 display: block;
                                 margin-left: auto;
@@ -194,6 +185,6 @@ def get_chosen_pipeline(chosen_pipeline):
 
 if __name__ == '__main__':
 
-    __init__()
+    initialize_app()
 
     initialize_page()
